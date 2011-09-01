@@ -1,5 +1,6 @@
-- form_for @dictionary, :url => dictionary_path(@dictionary), :html => { :multipart => true } do |f|
+= form_for @dictionary, :url => dictionary_path(@dictionary), :html => { :multipart => true } do |f|
   %p
-    = f.file_field :file
+    = f.label :document, "Dictionary"
+    = f.file_field :document
   %p
     = f.submit "Upload"

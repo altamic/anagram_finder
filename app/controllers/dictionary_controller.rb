@@ -1,6 +1,6 @@
 class DictionaryController < ApplicationController
   def show
-    @dictionary = Dictionary.first
+    @dictionary = Dictionary.last
   end
 
   def new
@@ -10,7 +10,7 @@ class DictionaryController < ApplicationController
   def create
     @dictionary = Dictionary.new(params[:dictionary])
     if @dictionary.save
-      redirect_to @upload, :notice => 'Dictionary upload successful'
+      redirect_to root_path, :notice => 'Dictionary has been uploaded'
     else
       render 'new'
     end
