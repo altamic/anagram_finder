@@ -59,6 +59,4 @@ class Dictionary < ActiveRecord::Base
     self.name = document_file_name
     true
   end
-
-
 end

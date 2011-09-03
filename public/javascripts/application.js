@@ -10,9 +10,8 @@ jQuery.fn.submitWithAjax = function() {
   return this;
 };
 
-// see show.js.erb
+// see create.js.erb
 // $(document).ready(function() {
   // $("#search_anagrams").submitWithAjax();
 // })
-
 
