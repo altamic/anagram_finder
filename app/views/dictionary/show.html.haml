@@ -3,3 +3,12 @@
 %p
   Upload a
   = link_to 'New Dictionary', new_dictionary_path
+
+= form_tag dictionary_path, :method => :get, :id => "search_anagrams" do |f|
+  %p
+    = text_field_tag :search, params[:search], :size => 10
+    = submit_tag "Search Anagrams"
+
+#anagrams
+  = render "anagrams"
+

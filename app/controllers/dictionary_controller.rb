@@ -1,6 +1,11 @@
 class DictionaryController < ApplicationController
   def show
-    @dictionary = Dictionary.last
+    if params[:search].nil?
+      @word, @words = params[:search], []
+    else
+      @word = params[:search]
+      @words = Dictionary.find_anagram(params[:search])
+    end
   end
 
   def new
@@ -9,7 +14,7 @@ class DictionaryController < ApplicationController
 
   def create
     @dictionary = Dictionary.new(params[:dictionary])
-    if @dictionary.save
+    if @dictionary.save && @dictionary.save_index
       redirect_to root_path, :notice => 'Dictionary has been uploaded'
     else
       render 'new'
