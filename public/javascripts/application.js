@@ -11,7 +11,7 @@ jQuery.fn.submitWithAjax = function() {
 };
 
 // see create.js.erb
-// $(document).ready(function() {
-  // $("#search_anagrams").submitWithAjax();
-// })
+$(document).ready(function() {
+  $("#search_anagrams").submitWithAjax();
+})
 
