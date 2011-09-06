@@ -18,6 +18,12 @@ class DictionaryController < ApplicationController
       redirect_to root_path, :notice => 'Dictionary has been uploaded'
     else
       if request.xhr? 
+        if params[:search].nil?
+          @word, @words = params[:search], []
+        else
+          @word = params[:search]
+          @words = Dictionary.find_anagram(params[:search])
+        end
         render 'create'
       else
         render 'new'

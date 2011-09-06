@@ -1,0 +1,20 @@
+.anagram
+  - if not @words.blank?
+    %p
+    %p
+      = Time.now.strftime("%F %r")
+      %br
+      = @words.size
+      anagrams found for &laquo;
+      = @word
+      &raquo;:
+      = (@words[0..-2] +['']).join(', ')
+      = (@words[-1..-1]+['']).join('.')
+  - else
+    %p
+      = Time.now.strftime("%F %r")
+      %br
+      0 anagrams found for &laquo;
+      = @word
+      &raquo;.
+
