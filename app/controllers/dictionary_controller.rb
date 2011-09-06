@@ -17,7 +17,11 @@ class DictionaryController < ApplicationController
     if @dictionary.save && @dictionary.save_index
       redirect_to root_path, :notice => 'Dictionary has been uploaded'
     else
-      render 'new'
+      if request.xhr? 
+        render 'create'
+      else
+        render 'new'
+      end
     end
   end
 end
