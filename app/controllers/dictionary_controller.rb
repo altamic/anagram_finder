@@ -17,7 +17,7 @@ class DictionaryController < ApplicationController
     if @dictionary.save && @dictionary.save_index
       redirect_to root_path, :notice => 'Dictionary has been uploaded'
     else
-      if request.xhr? 
+      if request.xhr?
         if params[:search].nil?
           @word, @words = params[:search], []
         else
